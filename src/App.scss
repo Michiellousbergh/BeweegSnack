@@ -205,3 +205,11 @@ $navbar-toggler-padding-x:          1.5rem !default;
     @extend .p-2;
 
 }
+
+.mentions {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .align-items-center;
+  color: white;
+  font-size: small;
+}
