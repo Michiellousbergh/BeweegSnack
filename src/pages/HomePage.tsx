@@ -1,143 +1,90 @@
 import { useState } from "react";
-import * as AlleOefeningen from "../common/AlleOefeningen";
-import { Oefening } from "../models/Oefening";
-import CategorieView from "./CategorieView";
+import BeweegSnackPage from "./BeweegSnack";
+import relax from "../images/homePage/relax.png";
+import gif from "../images/homePage/gif.png";
+import orient from "../images/homePage/orient.png";
+import speelplaats from "../images/homePage/speelplaats.png";
+import taal from "../images/homePage/taal.png";
+import webs from "../images/homePage/webs.png";
+import wiskunde from "../images/homePage/wiskunde.png";
+import beweeg from "../images/homePage/beweeg.png";
 
-export const Categories: string[] = [
-	"Coördinatie",
-	"Evenwicht",
-	"Concentratie",
-	"Groot motorisch bewegen",
-	"Kracht",
-	"Ontspanning",
-	"Reactiesnelheid",
-	"Ritme",
-	"Ruimte",
-	"Samenwerken",
-	"Snelheid",
-	"Springen",
-	"Uithouding",
-];
+enum Pages {
+    CURRENT,
+    ACTIEVESPEELPLAATSWERKING_PAGE,
+    BEWEEGSNACK_PAGE,
+    GIF_PAGE,
+    ONSTPANNING_PAGE,
+    ORIENTATIEOPDEWERELD_PAGE,
+    TAALONTWOKKELING_PAGE,
+    WISKUNDIGDENKEN_PAGE,
+    WEBSITE_PAGE
+}
+
+const pageInfo = [
+    { 
+        title: "actieve speelplaatswerking",
+        page: Pages.ACTIEVESPEELPLAATSWERKING_PAGE,
+        img: speelplaats
+    },
+    { 
+        title: "beweeg snack",
+        page: Pages.BEWEEGSNACK_PAGE,
+        img: beweeg
+    },
+    { 
+        title: "gif",
+        page: Pages.GIF_PAGE,
+        img: gif
+    },
+    { 
+        title: "ontspanning",
+        page: Pages.ONSTPANNING_PAGE,
+        img: relax
+    },
+    { 
+        title: "oriëntatie op de wereld",
+        page: Pages.ORIENTATIEOPDEWERELD_PAGE,
+        img: orient
+    },
+    { 
+        title: "taalontwikkeling",
+        page: Pages.TAALONTWOKKELING_PAGE,
+        img: taal
+    },
+    { 
+        title: "wiskundig denken",
+        page: Pages.WISKUNDIGDENKEN_PAGE,
+        img: wiskunde
+    },
+    { 
+        title: "website",
+        page: Pages.WEBSITE_PAGE,
+        img: webs
+    }
+]
 
 const HomePage = () => {
-	const [currentPage, changeCurrentPage] = useState<JSX.Element | undefined>();
-	console.log(Categories);
-	
+    const [currentPage, changeCurrentPage] = useState<Pages>(Pages.CURRENT);
 
-	const clickItem = (item: string) => {
-		let list: Oefening[] = [];
-		switch (item) {
-			case "Coördinatie":
-				list = [
-					AlleOefeningen.VriezenEnDooien(),
-					AlleOefeningen.Beweegslang(),
-					AlleOefeningen.Balanceren(),
-					AlleOefeningen.NummerZoeken(),
-					AlleOefeningen.Multidobbel(),
-				];
-				break;
-			case "Evenwicht":
-				list = [AlleOefeningen.LevendeTafel(), AlleOefeningen.Multidobbel()];
-				break;
-			case "Groot motorisch bewegen":
-				list = [AlleOefeningen.MonkeySeeMonkeyDo(), AlleOefeningen.PatachiPataboem()];
-				break;
-			case "Concentratie":
-				list = [
-					AlleOefeningen.TegendraadseLeerling(),
-					AlleOefeningen.Dirigentje(),
-					AlleOefeningen.PatachiPataboem(),
-					AlleOefeningen.DoeMaarNa(),
-				];
-				break;
-			case "Kracht":
-				list = [
-					AlleOefeningen.Tabata(),
-					AlleOefeningen.WieGeraaktRecht(),
-					AlleOefeningen.Multidobbel(),
-					AlleOefeningen.DoeMaarNa(),
-				];
-				break;
-			case "Ontspanning":
-				list = [
-					AlleOefeningen.VriezenEnDooien(),
-					AlleOefeningen.OntwarDeKnoop(),
-					AlleOefeningen.DeLegeStoel(),
-					AlleOefeningen.MetWieKomIkOvereen(),
-					AlleOefeningen.MonkeySeeMonkeyDo(),
-					AlleOefeningen.WieBenIk(),
-					AlleOefeningen.WieNietWegIsIsGezien(),
-				];
-				break;
-			case "Reactiesnelheid":
-				list = [
-					AlleOefeningen.DeLegeStoel(),
-					AlleOefeningen.TegendraadseLeerling(),
-					AlleOefeningen.Dirigentje(),
-					AlleOefeningen.ActieReactie(),
-					AlleOefeningen.Oogcontact(),
-					AlleOefeningen.MeesterZegt(),
-				];
-				break;
-			case "Ritme":
-				list = [AlleOefeningen.Bodydrum(), AlleOefeningen.Oogcontact()];
-				break;
-			case "Ruimte":
-				list = [AlleOefeningen.WieNietWegIsIsGezien(), AlleOefeningen.ZoekHetVoorwerp()];
-				break;
-			case "Samenwerken":
-				list = [
-					AlleOefeningen.LevendeTafel(),
-					AlleOefeningen.OntwarDeKnoop(),
-					AlleOefeningen.WieGeraaktRecht(),
-					AlleOefeningen.MetWieKomIkOvereen(),
-					AlleOefeningen.WieBenIk(),
-					AlleOefeningen.ZoekHetVoorwerp(),
-				];
-				break;
-			case "Snelheid":
-				list = [
-					AlleOefeningen.Beweegslang(),
-					AlleOefeningen.Dirigentje(),
-					AlleOefeningen.NummerZoeken(),
-					AlleOefeningen.PatachiPataboem(),
-					AlleOefeningen.WieNietWegIsIsGezien(),
-				];
-				break;
-			case "Springen":
-				list = [
-					AlleOefeningen.Tabata(),
-					AlleOefeningen.Aardbeving(),
-					AlleOefeningen.Multidobbel(),
-				];
-				break;
-			case "Uithouding":
-				list = [AlleOefeningen.Multidobbel(), AlleOefeningen.MeesterZegt()];
-				break;
-			default:
-				changeCurrentPage(undefined);
-		}
-
-		changeCurrentPage(<CategorieView oefeningenLijst={list} onback={onBack} />);
-	};
-
-	const onBack = () => {
-		changeCurrentPage(undefined);
-	};
-
-	return (
-		<div className="body">
-			{currentPage === undefined ? (
-				<ul className="homeList">
-					{Categories.map((item) => (
-						<li onClick={() => clickItem(item)}>{item}</li>
-					))}
-				</ul>
-			) : (
-				currentPage
-			)}
-		</div>
-	);
-};
+    const onBack = () => {
+        changeCurrentPage(Pages.CURRENT);
+    }
+    switch(currentPage) {
+        case Pages.BEWEEGSNACK_PAGE:
+            return <BeweegSnackPage onBack={onBack}/>
+        default:
+            return (
+                <div className="homePageContainer">
+                    {
+                        pageInfo.map(info => <div onClick={() => changeCurrentPage(info.page)}>
+                            <img src={info.img}></img>
+                            <p>{info.title}</p>
+                            </div>)
+                    }
+                </div>
+            );
+    }
+}
 
 export default HomePage;

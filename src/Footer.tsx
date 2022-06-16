@@ -1,4 +1,4 @@
-import logoUcll from "./images/logo_ucleuvenlimburg_socialmedia_rgb.png";
+import logoUcll from "./images/logo_ucleuvenlimburg.png";
 import logoUHasselt from "./images/logo_uhasselt.png";
 import {HiMail} from "react-icons/hi";
 

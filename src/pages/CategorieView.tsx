@@ -25,11 +25,11 @@ const CategorieView = (props: CategorieViewProps) => {
 					<div className="backContainer">
 						<button onClick={props.onback}>Back</button>
 					</div>
-					<ul className="homeList">
+					<div className="homePageContainer">
 						{props.oefeningenLijst.map((item) => (
-							<li onClick={() => clickOefening(item)}>{item.titel}</li>
+							<div onClick={() => clickOefening(item)}>{item.titel}</div>
 						))}
-					</ul>
+					</div>
 				</>
 			) : (
 				currrentOefening

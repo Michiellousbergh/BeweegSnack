@@ -1,4 +1,6 @@
 import { Intensiteit, Oefening } from "../models/Oefening";
+import logo from "../images/logo.png";
+import gif from "../images/homePage/gif.png";
 
 export const VriezenEnDooien = (): Oefening => {
 	return {
@@ -9,6 +11,7 @@ export const VriezenEnDooien = (): Oefening => {
 		duur: 15,
 		intensiteit: Intensiteit.MATIG,
 		benodigdheden: "Niks",
+		image: logo
 	};
 };
 
@@ -20,6 +23,7 @@ export const LevendeTafel = (): Oefening => {
 		duur: 10,
 		intensiteit: Intensiteit.MATIG,
 		benodigdheden: "Beamer (illustratie foto)",
+		image: gif
 	};
 };
 

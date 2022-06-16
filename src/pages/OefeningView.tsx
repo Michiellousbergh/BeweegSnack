@@ -1,5 +1,5 @@
 import { Intensiteit, Oefening } from "../models/Oefening";
-
+import defaultImg from "../images/default.png";
 interface OefeningViewProps {
 	oefening: Oefening;
 	onback: () => void;
@@ -23,12 +23,14 @@ const OefeningView = (props: OefeningViewProps) => {
 
 				<div className="textfield">
 					<h3>Uitleg</h3>
-					<p>{props.oefening.uitleg}</p>
-					{props.oefening.image ? (
-						<img src={props.oefening.image} alt="voorbeeld"></img>
-					) : (
-						<></>
-					)}
+					<div>
+						<p>{props.oefening.uitleg}</p>
+						{props.oefening.image ? (
+							<img src={props.oefening.image} alt="voorbeeld"></img>
+						) : (
+							<img src={defaultImg} alt="voorbeeld"></img>
+						)}
+					</div>
 				</div>
 
 				<div className="textfield">

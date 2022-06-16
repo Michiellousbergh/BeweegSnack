@@ -108,8 +108,8 @@ $navbar-toggler-padding-x:          1.5rem !default;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 .body {
-  background-color: $red;
-
+  background-color: $off-white;
+  color: $blue-pastel;
   @extend .d-flex;
   @extend .flex-column;
 }
@@ -136,6 +136,40 @@ $navbar-toggler-padding-x:          1.5rem !default;
   @extend .img-fluid;
 }
 
+.homePageContainer {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .flex-wrap;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+  
+  div {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+    @extend .shadow;
+    @extend .shadow-lg;
+    @extend .m-1;
+    @extend .col-4;
+    max-height: 8rem;
+    border-radius: 3rem;
+    background-color: white;
+    overflow: hidden;
+
+    img {
+      @extend .pt-5;
+    }
+
+    p {
+      position: absolute;
+      color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    }
+
+  }
+}
+
 .homeList {
   @extend .list-group;
     background-color: $white;
@@ -148,7 +182,7 @@ $navbar-toggler-padding-x:          1.5rem !default;
   li {
     @extend .d-flex;
     @extend .justify-content-center;
-    color: $red;
+    color: $blue-pastel;
     @extend .border;
     @extend .border-bottom;
     @extend .border-1;
@@ -164,7 +198,7 @@ $navbar-toggler-padding-x:          1.5rem !default;
 .title {
   @extend .d-flex;
   @extend .justify-content-between;
-  color: white;
+  color: $blue-pastel;
   @extend .h4;
   @extend .m-2;
   @extend .align-items-center;
@@ -184,6 +218,25 @@ $navbar-toggler-padding-x:          1.5rem !default;
   @extend .m-2;
   @extend .p-2;
   @extend .display-6;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+
+  div {
+    @extend .d-flex;
+    @extend .flex-row;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+
+    p {
+      @extend .col-6;
+    }
+
+    img {
+      @extend .col-4;
+    }
+  }
 }
 
 .backContainer {
@@ -192,6 +245,7 @@ $navbar-toggler-padding-x:          1.5rem !default;
 
   button {
     @extend .backButton;
+    color: $blue-pastel;
   }
 }
 
@@ -210,6 +264,6 @@ $navbar-toggler-padding-x:          1.5rem !default;
   @extend .d-flex;
   @extend .flex-column;
   @extend .align-items-center;
-  color: white;
+  color: $blue-pastel;
   font-size: small;
 }
