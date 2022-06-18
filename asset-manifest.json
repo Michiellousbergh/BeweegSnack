@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/BeweegSnack/static/css/main.46d674cb.css",
-    "main.js": "/BeweegSnack/static/js/main.78b36fc4.js",
+    "main.js": "/BeweegSnack/static/js/main.7ab1dbc6.js",
     "static/media/beweeg.png": "/BeweegSnack/static/media/beweeg.91368477a614808c4aad.png",
     "static/media/wiskunde.png": "/BeweegSnack/static/media/wiskunde.69ac7df4fadd74129107.png",
+    "static/media/Levende_tafel.png": "/BeweegSnack/static/media/Levende_tafel.51a90cf9a46db799fdfd.png",
     "static/media/default.png": "/BeweegSnack/static/media/default.fd538d5171e3f27f627a.png",
     "static/media/gif.png": "/BeweegSnack/static/media/gif.8d5b103b364f1fd85fc8.png",
     "static/media/webs.png": "/BeweegSnack/static/media/webs.998cf866455773b5c201.png",
@@ -16,10 +17,10 @@
     "static/media/logo.png": "/BeweegSnack/static/media/logo.6682309c62b371ae89c7.png",
     "index.html": "/BeweegSnack/index.html",
     "main.46d674cb.css.map": "/BeweegSnack/static/css/main.46d674cb.css.map",
-    "main.78b36fc4.js.map": "/BeweegSnack/static/js/main.78b36fc4.js.map"
+    "main.7ab1dbc6.js.map": "/BeweegSnack/static/js/main.7ab1dbc6.js.map"
   },
   "entrypoints": [
     "static/css/main.46d674cb.css",
-    "static/js/main.78b36fc4.js"
+    "static/js/main.7ab1dbc6.js"
   ]
 }
